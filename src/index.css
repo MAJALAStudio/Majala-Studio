@@ -8,98 +8,99 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* EdTech Theme - Light Mode (Clean, Professional) */
-    --background: 0 0% 98%;
-    --foreground: 0 0% 5%;
+    /* EdTech Theme - Hybrid (Happy, Modern, Google x Apple) */
+    --background: 210 20% 98%;
+    /* Very slight cool tint */
+    --foreground: 220 15% 10%;
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 5%;
+    --card-foreground: 220 15% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 5%;
+    --popover-foreground: 220 15% 10%;
 
-    /* Primary - Innovation Red (Bold & Energetic) */
-    --primary: 348 83% 47%;
-    /* Crimson */
-    --primary-foreground: 0 0% 98%;
-    --primary-glow: 348 83% 67%;
+    /* Primary - Vibrant Coral/Red (Energetic & Friendly) */
+    --primary: 345 90% 60%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 345 100% 75%;
 
-    /* Secondary - Tech Orange (Vitality) */
-    --secondary: 16 90% 60%;
-    /* Orange-Red */
-    --secondary-foreground: 0 0% 98%;
+    /* Secondary - Playful Indigo/Blue (Trust & Tech) */
+    --secondary: 245 80% 65%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
+    --muted: 220 10% 96%;
+    --muted-foreground: 220 10% 45%;
 
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
+    --accent: 220 10% 96%;
+    --accent-foreground: 220 15% 10%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 85% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 348 83% 47%;
+    --border: 220 15% 90%;
+    --input: 220 15% 90%;
+    --ring: 345 90% 60%;
 
-    --radius: 0.5rem;
+    --radius: 1.5rem;
+    /* Extra rounded (Google style) */
 
-    /* Custom Tech Colors */
-    --tech-cyan: 190 100% 50%;
-    /* Kept for subtle accents */
-    --tech-purple: 270 100% 60%;
-    /* Kept for subtle accents */
-    --tech-dark: 0 0% 5%;
+    /* Custom Tech Colors - Brighter */
+    --tech-cyan: 190 90% 50%;
+    --tech-purple: 270 90% 60%;
+    --tech-dark: 220 15% 10%;
 
-    /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(348 83% 47%), hsl(16 90% 60%));
-    --gradient-card: linear-gradient(145deg, #ffffff, #fff1f2);
-    --gradient-glow: radial-gradient(circle at center, hsl(348 83% 47% / 0.2), transparent 70%);
+    /* Gradients - Smoother & Brighter */
+    --gradient-hero: linear-gradient(135deg, hsl(345 90% 60%), hsl(245 80% 65%));
+    --gradient-card: linear-gradient(145deg, #ffffff, #f0f4ff);
+    --gradient-glow: radial-gradient(circle at center, hsl(345 90% 60% / 0.15), transparent 70%);
   }
 
   .dark {
-    /* EdTech Theme - Dark Mode (Futuristic Red, Immersive) */
-    --background: 0 0% 5%;
-    /* Deep Black/Red tint */
-    --foreground: 0 0% 98%;
+    /* EdTech Theme - Dark Mode (Deep, Vibrant, OLED Friendly) */
+    --background: 220 15% 8%;
+    --foreground: 220 10% 98%;
 
-    --card: 0 0% 8%;
-    --card-foreground: 0 0% 98%;
+    --card: 220 15% 12%;
+    --card-foreground: 220 10% 98%;
 
-    --popover: 0 0% 8%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 220 15% 12%;
+    --popover-foreground: 220 10% 98%;
 
-    /* Primary - Neon Red */
-    --primary: 348 90% 55%;
-    --primary-foreground: 0 0% 98%;
-    --primary-glow: 348 100% 65%;
+    /* Primary - Neon Coral */
+    --primary: 345 100% 65%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 345 100% 70%;
 
-    /* Secondary - Neon Orange */
-    --secondary: 16 100% 65%;
-    --secondary-foreground: 0 0% 98%;
+    /* Secondary - Neon Indigo */
+    --secondary: 245 100% 70%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 65%;
+    --muted: 220 15% 20%;
+    --muted-foreground: 220 10% 65%;
 
-    --accent: 0 0% 15%;
-    --accent-foreground: 0 0% 98%;
+    --accent: 220 15% 20%;
+    --accent-foreground: 220 10% 98%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 15%;
-    --input: 0 0% 15%;
-    --ring: 348 90% 55%;
+    --border: 220 15% 20%;
+    --input: 220 15% 20%;
+    --ring: 345 100% 65%;
 
     /* Gradients Dark */
-    --gradient-hero: linear-gradient(135deg, hsl(348 90% 20%), hsl(16 90% 25%));
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 10% / 0.8), hsl(0 0% 12% / 0.8));
+    --gradient-hero: linear-gradient(135deg, hsl(345 90% 30%), hsl(245 90% 35%));
+    --gradient-card: linear-gradient(145deg, hsl(220 15% 14%), hsl(220 15% 16%));
   }
 }
 
 @layer base {
   * {
     @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 
   body {
@@ -109,18 +110,18 @@ All colors MUST be HSL.
 
 @layer utilities {
   .glass {
-    @apply bg-white/5 backdrop-blur-xl border border-white/10 shadow-xl;
+    @apply bg-white/10 backdrop-blur-2xl border border-white/20 shadow-xl;
   }
 
   .glass-card {
-    @apply bg-card/60 backdrop-blur-md border border-white/5 shadow-lg transition-all duration-300 hover:bg-card/80 hover:scale-[1.02] hover:shadow-primary/10 hover:border-primary/20;
+    @apply bg-card/40 backdrop-blur-xl border border-white/10 shadow-lg transition-all duration-500 hover:bg-card/60 hover:scale-[1.02] hover:shadow-primary/20 hover:border-primary/30;
   }
 
   .glass-nav {
-    @apply bg-background/70 backdrop-blur-2xl border-b border-white/5;
+    @apply bg-background/60 backdrop-blur-2xl border-b border-white/10 supports-[backdrop-filter]:bg-background/20;
   }
 
   .text-glow {
-    text-shadow: 0 0 20px hsl(var(--primary) / 0.5);
+    text-shadow: 0 0 30px hsl(var(--primary) / 0.6);
   }
 }

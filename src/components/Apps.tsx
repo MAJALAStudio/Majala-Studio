@@ -58,31 +58,38 @@ const apps = [
 
 const categories = ["All", "VR", "AR", "Mobile", "Web"];
 
-const Apps = () => {
+interface AppsProps {
+    id?: string;
+}
+
+export const Apps = ({ id }: AppsProps) => {
     const [filter, setFilter] = useState("All");
 
     const displayedApps = filter === "All" ? apps : apps.filter(app => app.category === filter);
 
     return (
-        <div className="min-h-screen bg-background text-foreground pt-20">
-            <div className="container px-4 md:px-6 py-12">
+        <section id={id} className="py-24 bg-background relative overflow-hidden">
+            {/* Decorative Background */}
+            <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-primary/5 to-transparent pointer-events-none" />
+
+            <div className="container px-4 md:px-6 relative z-10">
                 <div className="text-center mb-16">
-                    <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
-                        Our Applications
-                    </h1>
+                    <h2 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">
+                        Our <span className="text-primary">Applications</span>
+                    </h2>
                     <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                        Explore our portfolio of cutting-edge educational and training applications powered by next-gen technology.
+                        Explore our portfolio of cutting-edge educational and training applications.
                     </p>
                 </div>
 
                 {/* Filter Buttons */}
-                <div className="flex flex-wrap justify-center gap-4 mb-12">
+                <div className="flex flex-wrap justify-center gap-3 mb-12">
                     {categories.map((cat) => (
                         <Button
                             key={cat}
-                            variant={filter === cat ? "default" : "outline"}
+                            variant={filter === cat ? "default" : "secondary"}
                             onClick={() => setFilter(cat)}
-                            className="rounded-full px-6"
+                            className={`rounded-full px-6 transition-all duration-300 ${filter === cat ? 'shadow-lg shadow-primary/25 scale-105' : 'hover:bg-secondary/20 scale-100'}`}
                         >
                             {cat}
                         </Button>
@@ -92,38 +99,38 @@ const Apps = () => {
                 {/* Applications Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {displayedApps.map((app) => (
-                        <Card key={app.id} className="group hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300 border-2 hover:border-primary/50 backdrop-blur-sm bg-card/50">
+                        <Card key={app.id} className="glass-card border-none group relative overflow-hidden h-full flex flex-col">
+                            <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                             <CardHeader>
                                 <div className="flex items-start justify-between mb-2">
-                                    <Badge variant="secondary" className="mb-2">
+                                    <Badge variant="secondary" className="mb-2 bg-secondary/10 text-secondary hover:bg-secondary/20">
                                         {app.category}
                                     </Badge>
                                     <Badge
                                         variant={app.status === "Live" ? "default" : "outline"}
-                                        className={app.status === "Live" ? "bg-green-500/20 text-green-400 border-green-500/50" : ""}
+                                        className={app.status === "Live" ? "bg-green-500/20 text-green-500 border-green-500/50" : "text-muted-foreground"}
                                     >
                                         {app.status}
                                     </Badge>
                                 </div>
                                 <CardTitle className="text-2xl group-hover:text-primary transition-colors flex items-center gap-2">
-                                    <Rocket className="w-5 h-5" />
+                                    <Rocket className="w-5 h-5 text-primary" />
                                     {app.title}
                                 </CardTitle>
-                                <CardDescription className="text-base mt-2">
+                                <CardDescription className="text-base mt-2 line-clamp-2">
                                     {app.description}
                                 </CardDescription>
                             </CardHeader>
-                            <CardContent>
-                                <div className="flex flex-wrap gap-2 mb-4">
+                            <CardContent className="mt-auto">
+                                <div className="flex flex-wrap gap-2 mb-6">
                                     {app.tags.map((tag) => (
-                                        <Badge key={tag} variant="outline" className="text-xs">
+                                        <Badge key={tag} variant="outline" className="text-xs border-white/20 bg-white/10">
                                             {tag}
                                         </Badge>
                                     ))}
                                 </div>
                                 <Button
-                                    variant="ghost"
-                                    className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-all"
+                                    className="w-full rounded-xl bg-white/50 hover:bg-primary hover:text-white dark:bg-white/5 dark:hover:bg-primary transition-all duration-300 group-hover:shadow-lg group-hover:shadow-primary/20 text-foreground"
                                 >
                                     Learn More
                                     <ExternalLink className="ml-2 w-4 h-4" />
@@ -133,8 +140,6 @@ const Apps = () => {
                     ))}
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
-
-export default Apps;
